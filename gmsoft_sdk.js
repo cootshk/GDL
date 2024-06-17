@@ -2018,14 +2018,14 @@ function _0x170291() {
         }
     });
     _0x16fcdb();
-    let _0xa4a778 = new Date();
-    let _0x1b60d1 = _0xa4a778.getTime() + _0xa4a778.getTimezoneOffset() * 60000;
+    let date_current = new Date();
+    let unixtime = date_current.getTime() + date_current.getTimezoneOffset() * 60000;
     let hostname = window.location.hostname;
     if (document.referrer) {
         let referrer = document.referrer;
         hostname = referrer.match(/:\/\/(.[^/]+)/)[1]; // https://regex101.com/r/TjxTE0/1
     }
-    let url_params = "domain=" + hostname + "&game_id=" + _gameId + "&timespan=" + _0x1b60d1;
+    let url_params = "domain=" + hostname + "&game_id=" + _gameId + "&timespan=" + unixtime;
     let base64_params = btoa(url_params);
     let API_URL = "https://api.1games.io/info?params=" + base64_params;
     let response = httpGet(API_URL);
